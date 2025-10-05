@@ -1,0 +1,65 @@
+---
+import LanguagePicker from '@components/astro/LanguagePicker.astro';
+import ThemeSwitcher from '@svelte/component/ThemeSwitcher.svelte';
+import getMessage from "@i18n/translation";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+export interface Props {
+	title: string;
+	body: string;
+	href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+<div class="navbar bg-base-100 shadow-sm">
+	<div class="navbar-start">
+	  <div class="dropdown">
+		<div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+		  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+		</div>
+		<ul tabindex="0" class="menu menu-lg dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+
+		  <li><a href={translatePath('/architecture')}>Architecture <!--{getMessage(lang, "header-club")}--></a></li>
+		  <li><a href={translatePath('/product_line')}>Product line <!--{getMessage(lang, "header-club")}--></a></li>
+		  <li><a href={translatePath('/security_licence')}>Security and licences<!--{getMessage(lang, "header-club")}--></a></li> 
+		  <li><a href={translatePath('/settings')}>{getMessage(lang, "header-settings")}</a></li>
+		  <li>
+			<summary>{getMessage(lang, "header-languages")}</summary>
+			<ul class="p-2">
+			  <LanguagePicker />
+			</ul>
+		  </li>
+		</ul>
+	  </div>
+	  <a class="btn btn-ghost text-xl" href={translatePath('/')}>
+		<div class="d-flex">
+			<span class="c-white">Sbom</span>
+			<div class="c-primary">king</div>
+		</div>
+	  </a>
+	</div>
+	<div class="navbar-center hidden lg:flex">
+	  <ul class="menu menu-horizontal menu-lg px-1">
+		<li><a href={translatePath('/architecture')}>Architecture <!--{getMessage(lang, "header-club")}--></a></li>
+		<li><a href={translatePath('/product_line')}>Product line <!--{getMessage(lang, "header-club")}--></a></li>
+		<li><a href={translatePath('/security_licence')}>Security and licences<!--{getMessage(lang, "header-club")}--></a></li>
+		<li><a href={translatePath('/settings')}>{getMessage(lang, "header-settings")}</a></li>
+		<li>
+		  <details>
+			<summary>{getMessage(lang, "header-languages")}</summary>
+			<ul class="p-2">
+			  <LanguagePicker />
+			</ul>
+		  </details>
+		</li>
+	  </ul>
+	</div>
+	<div class="navbar-end">
+	    <ThemeSwitcher client:only="svelte"/>
+	</div>
+</div>

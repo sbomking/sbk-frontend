@@ -1,0 +1,25 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": ["vite/client"],
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@css/*": ["src/css/*"],
+      "@i18n/*": ["src/components/common/i18n/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@solidjs/*": ["src/components/solidjs/*"],
+      "@svelte/*": ["src/components/svelte/*"]
+    }
+  }
+}

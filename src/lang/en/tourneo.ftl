@@ -1,0 +1,17 @@
+footer-about-us = A propos de
+footer-follow-us = Suivez-nous
+footer-information = Information
+tournaments = Tournois
+tennis = Tennis
+court-delete = The court ${title} has been deleted
+header-about = About the website
+header-booking-fields = Booking fields
+header-club = Club
+header-languages = Langues
+header-newsletter = Newsletter
+header-settings = Settings
+header-settings-configurations = Configurations
+header-sponsors = Sponsors
+header-sport-field = Fields
+header-sports = Sports
+header-subscriptions = Subscriptions

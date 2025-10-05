@@ -1,0 +1,17 @@
+footer-about-us = Over onze
+footer-follow-us = Volg onze
+footer-information = Informatie
+tournaments = Tournoien
+tennis = Tennis
+court-delete = The court ${title} has been deleted
+header-about = Over de website
+header-booking-fields = Réservation de terrains
+header-club = Club
+header-languages = Talen
+header-newsletter = Newsletter
+header-settings = Settings
+header-settings-configurations = Configurations
+header-sponsors = Sponsors
+header-sport-field = Sportveld
+header-sports = Sports
+header-subscriptions = Subscriptions

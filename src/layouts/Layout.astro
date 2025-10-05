@@ -1,0 +1,35 @@
+---
+import Header from "@components/astro/Header.astro";
+import Footer from '@components/astro/Footer.astro';
+
+import { getLangFromUrl } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang} data-bs-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="category" content="software">
+		<meta name="keywords" content="sbom,dependency,security,architecture,inventory,opensource" lang="fr">
+		<meta name="author" content="Sbomking">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="rating" content="general">
+	</head>
+	<body>
+		<Header title="Title" body="body" href="href"/>
+		<main><slot /></main>
+		<Footer/>
+	</body>
+</html>

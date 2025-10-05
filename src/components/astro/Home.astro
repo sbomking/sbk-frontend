@@ -1,0 +1,33 @@
+---
+import getMessage from "@i18n/translation";
+import {
+	getLangFromUrl,
+	useTranslations,
+	useTranslatedPath,
+} from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+<>
+<section id="title">
+	<div class="flex justify-center">
+		<div class="d-flex-center-col big-letter">
+			<span class="sbk-title">Sbom<span class="c-primary">king</span></span>
+			<span>SBOM management</span>
+			<span>for architect</span>
+			<span>for dev</span>
+			<span>for ops</span>
+			<div class="d-flex-center-col med-letter mt-2 pl-1 pr-1">
+				<span>We believe in open source.</span>
+				<span></span>
+
+				<a href={translatePath("/sbk/create")} class="btn btn-xl bg-white text-black rounded-4xl btn-home">Create your own tournament today!
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+</>

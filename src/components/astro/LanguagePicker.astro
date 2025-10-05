@@ -1,0 +1,30 @@
+---
+import { languages, defaultLang } from '@i18n/ui';
+import { getCurrentPath } from '@i18n/utils';
+
+const current_path = getCurrentPath(Astro.url);
+
+function getHref(lang: string) {
+  switch (lang === defaultLang) {
+    case true:
+      return "/" + current_path;
+    default:
+      return "/" + lang + "/" + current_path;
+  }
+}
+
+//https://docs.astro.build/en/core-concepts/routing/
+/*
+{Object.entries(languages).map(([lang, label]) => (
+    <li>
+      <a href={getHref(lang)}>{label}</a>
+    </li>
+))}
+*/
+---
+
+{Object.entries(languages).map(([lang, label]) => (
+    <li>
+      <a href={(lang == defaultLang) ? `/${current_path}` : `/${lang}/${current_path}`}>{label}</a>
+    </li>
+))}

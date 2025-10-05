@@ -1,0 +1,10 @@
+gen-min-length = Please use at least 2 characters (you are currently using 1 characters)
+gen-min-size = Please select a value that is no less than { $min }.
+gen-max-size = Please select a value that is no more than { $max }.
+gen-required = Please fill out this field.
+add-a-product-line = Add a product line
+delete-a-product-line = Delete a product line
+modify-a-product-line = Modify a product line
+title = Title
+title-sucessfully-added = { $title } was sucessfully added
+title-sucessfully-deleted = { $title } was sucessfully deleted

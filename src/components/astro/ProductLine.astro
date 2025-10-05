@@ -1,0 +1,35 @@
+---
+import getMessage from "@i18n/translation";
+import ProductLineComponent from "@components/solidjs/component/ProductLineComponent";
+import {
+	getLangFromUrl,
+	useTranslations,
+	useTranslatedPath,
+} from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+<>
+<div class="container mx-auto px-4 w-full">
+	<svg
+		version="2.0"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 512 512"
+		class="fill-customSecondary hidden"
+	>
+		<path
+			id="svgarrow"
+			d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+		>
+		</path>
+	</svg>
+
+	<section>
+		<div class="px-vw-5 position-relative">
+			<ProductLineComponent client:only="solid-js" />
+		</div>
+	</section>
+</div>
+</>

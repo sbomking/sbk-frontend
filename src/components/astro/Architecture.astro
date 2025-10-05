@@ -1,0 +1,23 @@
+---
+import getMessage from "@i18n/translation";
+import {
+	getLangFromUrl,
+	useTranslations,
+	useTranslatedPath,
+} from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+<>
+<div class="container mx-auto px-4 w-full">
+	<h1>Architecture</h1>
+	
+	<div>Architecture (Relationship between all service, inventory)</div>
+    <div>A Big diagram like tensorboard. </div>
+    <div>L3 diagram with all interaction. => Export to draw.io and Archimate. </div>
+
+    <div> Would be awesome to get telemetry data from opentelemetry to create a bigger box for this svc. </div>
+</div>
+</>

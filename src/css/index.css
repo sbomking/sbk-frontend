@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+#secArticle {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /*
+	background-color: #e5e5ef;
+	color: #F66E4C;
+	*/
+  /*color:#686868;*/
+  background: url("/img/tennis-1671852_1080.jpg");
+  background-size: cover;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.img-height {
+  max-height: 24em;
+  width: auto;
+  height: auto;
+}
+
+.border-top {
+  /*border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;*/
+  border-top: 1px solid #dee2e6 !important;
+}
+
+.px-vw-5 {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.h-50 {
+  height: 50% !important;
+}
+
+.bg-black {
+  --bs-bg-opacity: 1;
+  background-color: rgba((17, 17, 17), var(--bs-bg-opacity)) !important;
+  /*background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;*/
+}
+*.bg-cover {
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg-center {
+  background-position: center center;
+}
+
+.rounded-5 {
+  border-radius: 2rem !important;
+  /*border-radius: var(--bs-border-radius-xxl) !important;*/
+}
+
+.py-vh-3 {
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+}
+
+.shadow {
+  box-shadow: 0 1rem 3rem rgba(17, 17, 17, 0.5) !important;
+}

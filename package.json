@@ -1,0 +1,40 @@
+{
+  "name": "sbk-frontend",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "release": "astro build --mode production",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "^5.1.1",
+    "@astrojs/svelte": "^7.1.1",
+    "@fluent/bundle": "^0.19.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.13.9",
+    "daisyui": "^5.1.13",
+    "jose": "^6.0.10",
+    "oidc-client-ts": "2.4.0",
+    "solid-js": "^1.9.9",
+    "svelte": "^5.39.3",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "daisyui": "^5.1.13",
+    "typescript": "^5.8.2",
+    "vite": "^7.1.6",
+    "vite-plugin-solid": "^2.11.8"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not ie_mob 11",
+    "not baidu >= 7.12",
+    "not and_qq >= 1.2",
+    "not op_mini all"
+  ]
+}

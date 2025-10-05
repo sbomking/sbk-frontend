@@ -1,0 +1,21 @@
+---
+import SettingsComponent from "@components/solidjs/component/SettingsComponent";
+import getMessage from "@i18n/translation";
+import {
+	getLangFromUrl,
+	useTranslations,
+	useTranslatedPath,
+} from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+<>
+<div class="container mx-auto px-4 w-full mb-4">
+	<h1 class="container-title text-4xl">
+		{getMessage(lang, "header-settings")}
+	</h1>
+	<SettingsComponent client:only="solid-js" />
+</div>
+</>

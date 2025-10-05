@@ -1,0 +1,51 @@
+---
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
+import getMessage from '@i18n/translation';
+
+const next_year = new Date().getFullYear() + 1;
+
+const lang = getLangFromUrl(Astro.url);
+
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<footer id="footer">
+	<div class="container">
+		<div class="col1">
+			<h4>{getMessage(lang, 'footer-information')}</h4>
+			<ul class="nav footer-ul">
+				<li><a href={translatePath('/about/')}>{getMessage(lang, 'footer-about-us')}</a></li>
+				<!--
+				{% if lang == "fr" %}
+					<li><a href="/about">A propos de</a></li>
+				{% else %}
+					<li><a href="/{{lang}}/about">A propos de</a></li>
+				{% endif %}
+				 -->
+				</ul> 
+		</div>
+		
+		<div class="col2">
+			<h4>Feedback</h4>
+			<ul class="nav footer-ul">
+				</ul> 
+		</div>
+		
+		<div class="col3">
+			<h4>{getMessage(lang, 'footer-follow-us')}</h4>
+			<a href="#"> <i class="fa fa-twitter fa-4x"></i> </a>
+			<!--
+			{% set companyData = load_data(path="data/company.json", format="json") %}
+			{% if companyData %}
+				{% if companyData.company.facebook %}
+					<a href="{{ companyData.company.facebook | safe }}"> <i class="icon-facebook-f"></i> </a>
+				{% endif %}
+			{% endif %}
+			 -->
+			<a href="#"> <i class="fa fa-google-plus fa-4x"></i> </a> 
+			<a href="#"> <i class="fa fa-pinterest fa-4x"></i> </a>
+			<p class="d-flex">© 2025-{next_year} All right Reserved</p>
+		</div>
+	</div>
+</footer>
